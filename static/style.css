@@ -134,8 +134,10 @@ table.crumbs { width: 100%; border-collapse: collapse; min-width: 960px; font-si
 .cover-big .cover-title { font-size: 22px; line-height: 1.15; }
 .cover-author { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; opacity: .8; }
 .cover-foundations { background: var(--ink); color: #fff; }
-.cover-superinvestors { background: var(--accent); color: #fff; }
+.cover-advanced { background: var(--accent); color: #fff; }
+.cover-business { background: var(--f13-bg); color: var(--f13-fg); }
 .cover-mindset { background: var(--accent-tint); color: var(--buy-fg); }
+.cover-superinvestors { background: var(--accent); color: #fff; }   /* old themes, kept for older books.yaml files */
 .cover-special { background: var(--d13-bg); color: var(--d13-fg); }
 .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 20px; }
 .book { display: flex; gap: 20px; border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
