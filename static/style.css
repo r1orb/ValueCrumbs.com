@@ -180,6 +180,32 @@ table.crumbs { width: 100%; border-collapse: collapse; min-width: 960px; font-si
 .data-grid .card p { margin: 0; font-size: 15px; }
 .data-grid .badge { margin-bottom: 10px; }
 
+/* investors */
+.investor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 16px; }
+.investor-card { display: flex; flex-direction: column; gap: 6px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: var(--ink); }
+.investor-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(11,93,85,.08); color: var(--ink); }
+.investor-name { font-size: 18px; font-weight: 600; }
+.investor-stats { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.investor-top, .investor-changes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.badge-muted { background: var(--soft-bg); color: var(--muted); border: 1px solid var(--line); }
+.eyebrow a { color: var(--muted); text-decoration: none; }
+.eyebrow a:hover { color: var(--accent); }
+.investor-lede { margin-bottom: 24px; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 12px; margin-bottom: 24px; }
+.stat { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.stat-value { font-size: 20px; font-weight: 500; }
+.note { margin: 0 0 20px; padding: 12px 16px; border-radius: 8px; background: var(--soft-bg); color: var(--ink-2); font-size: 14px; }
+table.holdings { min-width: 720px; }
+.weight-col { min-width: 200px; }
+.weight { display: flex; align-items: center; gap: 10px; }
+.weight-track { display: block; width: 120px; height: 8px; border-radius: 4px; background: var(--soft-bg); flex: 0 0 auto; overflow: hidden; }
+.weight-bar { display: block; height: 100%; border-radius: 4px; background: var(--accent); min-width: 2px; }
+.weight .mono { font-size: 13px; }
+.section-title { font-size: 20px; margin: 40px 0 14px; }
+.crumb-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.crumb-list li { padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font-size: 14px; color: var(--ink-2); }
+
 @media (max-width: 640px) {
   .search { margin-left: 0; width: 100%; }
   .search input { flex: 1; width: auto; }
