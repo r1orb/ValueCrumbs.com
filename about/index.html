@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · ValueCrumbs</title>
+<meta name="description" content="What ValueCrumbs tracks, where the data comes from and what it is not.">
+<link rel="canonical" href="https://valuecrumbs.com/about/">
+<link rel="alternate" type="application/rss+xml" title="ValueCrumbs · Latest Crumbs" href="https://valuecrumbs.com/feed.xml">
+<link rel="icon" href="../static/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../static/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="../">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="5" cy="23" r="3" fill="currentColor" opacity=".35"/><circle cx="12" cy="17" r="3" fill="currentColor" opacity=".6"/><circle cx="19" cy="12" r="3" fill="currentColor" opacity=".8"/><circle cx="26" cy="6" r="3.5" fill="currentColor"/></svg>
+      <span>ValueCrumbs</span>
+    </a>
+    <nav aria-label="Main" class="nav">
+      <a href="../" >Latest Crumbs</a>
+      <a href="../books/" >Books</a>
+      <a href="../videos/" >Videos</a>
+      <a href="../about/" aria-current="page">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap main">
+<p class="eyebrow">ABOUT</p>
+<h1>The crumbs, explained</h1>
+<p class="lede">The best investors leave a trail. Every quarter they file their portfolios with the SEC, company insiders report every share they buy, and anyone crossing 5% of a company has to say so. ValueCrumbs follows that trail for you.</p>
+
+<div class="prose">
+  <h2>What we track</h2>
+  <p>A bot reads the SEC's EDGAR database every few minutes and turns new filings into short, readable "crumbs". Each one links to the original document, so you can always check the source.</p>
+</div>
+
+<div class="data-grid">
+  <div class="card">
+    <span class="badge badge-buy">Insider buys</span>
+    <p>Directors and officers buying their own company's stock with their own money, in the open market (Form 4, code P). Planned trades under 10b5-1 plans and sales are left out. Insiders must report within two business days.</p>
+  </div>
+  <div class="card">
+    <span class="badge badge-buy">Cluster buys</span>
+    <p>Several insiders of the same company buying within a few days of each other: one of the patterns investors watch most closely.</p>
+  </div>
+  <div class="card">
+    <span class="badge badge-f13">13F changes</span>
+    <p>New, increased, reduced and closed positions in the quarterly portfolios of the investors we follow. 13Fs are filed up to 45 days after quarter end and only show long positions in US-listed stocks.</p>
+  </div>
+  <div class="card">
+    <span class="badge badge-d13">5%+ stakes</span>
+    <p>Schedule 13D (activist) and 13G (passive) filings by those investors when they own more than 5% of a company.</p>
+  </div>
+</div>
+
+<div class="prose">
+  <h2>Investors we follow</h2>
+  <ul class="investors">
+    <li><strong>Warren Buffett</strong><span class="sub">Berkshire Hathaway</span></li>
+  </ul>
+  <p>Insider buys are reported for any company above a minimum size, and from a lower amount for companies these investors hold.</p>
+
+  <h2>What this is not</h2>
+  <ul>
+    <li><strong>Not investment advice.</strong> We report what public filings say. We do not tell anyone to buy or sell anything, and nothing here takes your situation into account.</li>
+    <li><strong>Not real time.</strong> Filings arrive days, sometimes weeks, after the trades they describe. By the time you read a crumb, the investor may already have changed their mind.</li>
+    <li><strong>Not infallible.</strong> Filings can be amended, and turning thousands of documents into crumbs can go wrong. Always check the linked filing before relying on a crumb.</li>
+  </ul>
+
+  <h2>Where the data comes from</h2>
+  <p>All crumbs come from public filings in the <a href="https://www.sec.gov/edgar/search/" rel="noopener">SEC EDGAR</a> database. Tickers for 13F positions are matched from their CUSIP codes through <a href="https://www.openfigi.com/" rel="noopener">OpenFIGI</a>. ValueCrumbs is independent and not affiliated with the SEC or with any of the investors mentioned.</p>
+
+  <h2>How the site is funded</h2>
+  <p>ValueCrumbs is free. Some links, like the books on our <a href="../books/">Books</a> page, are affiliate links: if you buy through them we may earn a small commission, at no extra cost to you.  Affiliate relationships never decide which filings we show.</p>
+
+  <h2>Contact</h2>
+  <p>Questions, corrections or ideas: <span class="pending">[pending: contact email]</span>.</p>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>Data from public SEC EDGAR filings. ValueCrumbs is for information only and is not investment advice. Some links are affiliate links; we may earn a commission at no cost to you.</p>
+    <div class="footer-links">
+      <a href="../legal/">Legal notice</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="https://valuecrumbs.com/feed.xml">RSS</a>
+    </div>
+  </div>
+  <div class="wrap copyright">© 2026 ValueCrumbs</div>
+</footer>
+<script src="../static/filters.js" defer></script>
+</body>
+</html>

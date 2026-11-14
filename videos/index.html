@@ -8,9 +8,7 @@
 <link rel="canonical" href="https://valuecrumbs.com/videos/">
 <link rel="alternate" type="application/rss+xml" title="ValueCrumbs · Latest Crumbs" href="https://valuecrumbs.com/feed.xml">
 <link rel="icon" href="../static/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="../static/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
@@ -24,9 +22,8 @@
       <a href="../" >Latest Crumbs</a>
       <a href="../books/" >Books</a>
       <a href="../videos/" aria-current="page">Videos</a>
-      <a href="#">About</a>
+      <a href="../about/" >About</a>
     </nav>
-    <a class="btn btn-dark" href="#">Get alerts on Telegram</a>
   </div>
 </header>
 
@@ -38,10 +35,12 @@
 <p class="lede">Annual meetings, interviews and lectures on value investing, hand-picked and played straight from YouTube.</p>
 
 <section class="feature feature-video">
-  <div class="player">
-    <iframe src="https://www.youtube-nocookie.com/embed/REPLACE_ME_1" title="[Video title]" loading="lazy"
-      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div class="player" data-embed="https://www.youtube-nocookie.com/embed/REPLACE_ME_1?rel=0&autoplay=1" data-title="[Video title]">
+    <button type="button" class="player-facade" aria-label="Play [Video title]">
+      <img src="https://i.ytimg.com/vi/REPLACE_ME_1/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <svg class="play" width="72" height="72" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="36" fill="#fff" opacity=".92"/><path d="M29 24 L50 36 L29 48 Z" fill="#16181D"/></svg>
+      <span class="player-note">Plays from YouTube when you click</span>
+    </button>
   </div>
   <div class="feature-body">
     <span class="badge badge-buy">Pick of the week</span>
@@ -92,22 +91,14 @@
 </div>
 <p class="empty" data-empty-for="videos" hidden>No videos in this category yet.</p>
 
-<section class="card card-soft suggest">
-  <div>
-    <h2>Know a video we should add?</h2>
-    <p>Send us the link. We only list full talks from the original channel.</p>
-  </div>
-  <a class="btn btn-accent" href="#">Suggest a video</a>
-</section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap footer-row">
     <p>Data from public SEC EDGAR filings. ValueCrumbs is for information only and is not investment advice. Videos belong to their creators and play through YouTube's own player.</p>
     <div class="footer-links">
-      <a href="#">Legal notice</a>
-      <a href="#">Privacy</a>
-      <a href="#">Contact</a>
+      <a href="../legal/">Legal notice</a>
+      <a href="../privacy/">Privacy</a>
       <a href="https://valuecrumbs.com/feed.xml">RSS</a>
     </div>
   </div>

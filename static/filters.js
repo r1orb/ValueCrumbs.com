@@ -32,3 +32,18 @@ document.querySelectorAll('[data-filter-scope]').forEach(function (toolbar) {
   });
   if (search) search.addEventListener('input', apply);
 });
+
+// Featured YouTube video: nothing is loaded from YouTube until the visitor clicks play.
+document.querySelectorAll('.player[data-embed]').forEach(function (box) {
+  var btn = box.querySelector('.player-facade');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = box.getAttribute('data-embed');
+    f.title = box.getAttribute('data-title') || 'YouTube video';
+    f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    box.replaceChildren(f);
+  });
+});
