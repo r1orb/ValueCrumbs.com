@@ -206,6 +206,17 @@ table.holdings { min-width: 720px; }
 .crumb-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .crumb-list li { padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font-size: 14px; color: var(--ink-2); }
 
+/* stock pages */
+.filing-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.filing-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
+.filing-list li:first-child { border-top: 0; }
+.badge-filing { min-width: 64px; text-align: center; }
+.badge-annual { background: var(--accent); color: #fff; }
+.badge-quarterly { background: var(--buy-bg); color: var(--buy-fg); }
+.badge-current { background: var(--f13-bg); color: var(--f13-fg); }
+.badge-proxy { background: var(--soft-bg); color: var(--muted); border: 1px solid var(--line); }
+.filing-more { margin: 14px 0 0; font-size: 14px; }
+
 @media (max-width: 640px) {
   .search { margin-left: 0; width: 100%; }
   .search input { flex: 1; width: auto; }
