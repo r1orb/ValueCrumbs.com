@@ -217,6 +217,46 @@ table.holdings { min-width: 720px; }
 .badge-proxy { background: var(--soft-bg); color: var(--muted); border: 1px solid var(--line); }
 .filing-more { margin: 14px 0 0; font-size: 14px; }
 
+/* Tables become stacked cards on phones: each row a card, cells placed by grid areas per table */
+@media (max-width: 640px) {
+  .table-box { border: 0; border-radius: 0; overflow: visible; }
+  table.crumbs, table.crumbs tbody { display: block; min-width: 0; width: 100%; }
+  table.crumbs thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  table.crumbs tr { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; row-gap: 6px; align-items: baseline;
+    padding: 14px 16px; margin-bottom: 10px; border: 1px solid var(--line); border-radius: 12px; }
+  table.crumbs tr[hidden] { display: none; }
+  table.crumbs td { display: block; padding: 0; border: 0; min-width: 0; white-space: normal; }
+  .crumbs .num { text-align: right; }
+  table.crumbs td[data-label]::before { content: attr(data-label) " "; font-family: var(--sans); font-size: 11px; font-weight: 600;
+    letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+  table.crumbs td.empty { grid-column: 1 / -1; }
+  .weight-col { min-width: 0; }
+  .weight-track { flex: 1 1 auto; width: auto; }
+
+  table.cards-home tr { grid-template-areas: "type date" "co val" "who who" "what what" "dates src"; }
+  .cards-home .c-date { grid-area: date; text-align: right; }
+  .cards-home .c-date br { display: none; }
+  .cards-home .c-type { grid-area: type; } .cards-home .c-co { grid-area: co; } .cards-home .c-val { grid-area: val; }
+  .cards-home .c-who { grid-area: who; } .cards-home .c-what { grid-area: what; }
+  .cards-home .c-dates { grid-area: dates; white-space: nowrap; } .cards-home .c-src { grid-area: src; text-align: right; }
+
+  table.cards-holdings tr { grid-template-columns: 2.25em 1fr auto; grid-template-areas: "rank co change" "weight weight weight" "val val shares"; }
+  .cards-holdings .c-rank { grid-area: rank; } .cards-holdings .c-co { grid-area: co; } .cards-holdings .c-change { grid-area: change; text-align: right; }
+  .cards-holdings .c-weight { grid-area: weight; } .cards-holdings .c-val { grid-area: val; text-align: left; } .cards-holdings .c-shares { grid-area: shares; }
+
+  table.cards-holders tr { grid-template-areas: "who change" "weight weight" "val shares" "since since"; }
+  .cards-holders .c-who { grid-area: who; } .cards-holders .c-change { grid-area: change; text-align: right; }
+  .cards-holders .c-weight { grid-area: weight; } .cards-holders .c-val { grid-area: val; text-align: left; }
+  .cards-holders .c-shares { grid-area: shares; } .cards-holders .c-since { grid-area: since; }
+
+  table.cards-stocks tr { grid-template-areas: "co val" "held held" "count count"; }
+  .cards-stocks .c-co { grid-area: co; } .cards-stocks .c-val { grid-area: val; } .cards-stocks .c-held { grid-area: held; }
+  .cards-stocks .c-count { grid-area: count; text-align: left; }
+
+  table.cards-exited tr { grid-template-areas: "co co" "val pct"; }
+  .cards-exited .c-co { grid-area: co; } .cards-exited .c-val { grid-area: val; text-align: left; } .cards-exited .c-pct { grid-area: pct; }
+}
+
 @media (max-width: 640px) {
   .search { margin-left: 0; width: 100%; }
   .search input { flex: 1; width: auto; }
