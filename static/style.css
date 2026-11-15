@@ -208,6 +208,10 @@ table.holdings { min-width: 720px; }
 .weight-bar { display: block; height: 100%; border-radius: 4px; background: var(--accent); min-width: 2px; }
 .weight .mono { font-size: 13px; }
 .section-title { font-size: 20px; margin: 40px 0 14px; }
+.feed-link { margin: -6px 0 14px; font-size: 13px; color: var(--muted); }
+.feed-link a { font-weight: 600; }
+.feed-link a::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px;
+  background: radial-gradient(circle at 0 100%, var(--accent) 22%, transparent 24%, transparent 44%, var(--accent) 46%, var(--accent) 56%, transparent 58%, transparent 74%, var(--accent) 76%, var(--accent) 86%, transparent 88%); vertical-align: -1px; }
 .crumb-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .crumb-list li { padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font-size: 14px; color: var(--ink-2); }
 
