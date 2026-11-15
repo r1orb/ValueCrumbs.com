@@ -187,6 +187,9 @@ table.crumbs { width: 100%; border-collapse: collapse; min-width: 960px; font-si
 .investor-card { display: flex; flex-direction: column; gap: 6px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: var(--ink); }
 .investor-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(11,93,85,.08); color: var(--ink); }
 .investor-name { font-size: 18px; font-weight: 600; }
+.investor-rank { font-size: 12px; color: var(--muted); }
+.sort-pills { align-items: center; }
+.sort-label { font-size: 13px; color: var(--muted); margin-right: 2px; }
 .investor-stats { font-size: 13px; color: var(--muted); margin-top: 4px; }
 .investor-top, .investor-changes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .badge-muted { background: var(--soft-bg); color: var(--muted); border: 1px solid var(--line); }
@@ -251,7 +254,8 @@ table.holdings { min-width: 720px; }
   .cards-holders .c-weight { grid-area: weight; } .cards-holders .c-val { grid-area: val; text-align: left; }
   .cards-holders .c-shares { grid-area: shares; } .cards-holders .c-since { grid-area: since; }
 
-  table.cards-stocks tr { grid-template-areas: "co val" "held held" "count count"; }
+  table.cards-stocks tr { grid-template-columns: 2.25em 1fr auto; grid-template-areas: "rank co val" "held held held" "count count count"; }
+  .cards-stocks .c-rank { grid-area: rank; text-align: left; }
   .cards-stocks .c-co { grid-area: co; } .cards-stocks .c-val { grid-area: val; } .cards-stocks .c-held { grid-area: held; }
   .cards-stocks .c-count { grid-area: count; text-align: left; }
 

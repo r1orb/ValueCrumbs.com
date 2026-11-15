@@ -33,6 +33,31 @@ document.querySelectorAll('[data-filter-scope]').forEach(function (toolbar) {
   if (search) search.addEventListener('input', apply);
 });
 
+// Ranking buttons: [data-sort-for="X"] reorders the children of #X by their data-sort-<key> attribute
+// (largest first, or A-Z with data-sort-asc) and renumbers their [data-rank] element.
+document.querySelectorAll('[data-sort-for]').forEach(function (group) {
+  var list = document.getElementById(group.getAttribute('data-sort-for'));
+  if (!list) return;
+  var buttons = group.querySelectorAll('[data-sort]');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var key = 'data-sort-' + btn.getAttribute('data-sort');
+      var asc = btn.hasAttribute('data-sort-asc');
+      var items = Array.prototype.filter.call(list.children, function (el) { return el.hasAttribute(key); });
+      items.sort(function (a, b) {
+        var x = a.getAttribute(key), y = b.getAttribute(key);
+        return asc ? x.localeCompare(y) : y.localeCompare(x);
+      });
+      items.forEach(function (el, i) {
+        list.appendChild(el);
+        var rank = el.querySelector('[data-rank]');
+        if (rank) rank.textContent = (rank.textContent.charAt(0) === '#' ? '#' : '') + (i + 1);
+      });
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+    });
+  });
+});
+
 // Featured YouTube video: nothing is loaded from YouTube until the visitor clicks play.
 document.querySelectorAll('.player[data-embed]').forEach(function (box) {
   var btn = box.querySelector('.player-facade');
