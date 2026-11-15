@@ -272,6 +272,10 @@ table.holdings { min-width: 720px; }
   .cards-ranking .c-rank { grid-area: rank; text-align: left; } .cards-ranking .c-co { grid-area: co; }
   .cards-ranking .c-val { grid-area: val; } .cards-ranking .c-count { grid-area: count; text-align: left; }
   .cards-ranking .c-who { grid-area: who; }
+  table.cards-insiders tr { grid-template-areas: "date val" "who who" "shares price" "src src"; }
+  .cards-insiders .c-date { grid-area: date; } .cards-insiders .c-val { grid-area: val; }
+  .cards-insiders .c-who { grid-area: who; } .cards-insiders .c-shares { grid-area: shares; text-align: left; }
+  .cards-insiders .c-price { grid-area: price; } .cards-insiders .c-src { grid-area: src; }
   table.cards-exited tr { grid-template-areas: "co co" "val pct"; }
   .cards-exited .c-co { grid-area: co; } .cards-exited .c-val { grid-area: val; text-align: left; } .cards-exited .c-pct { grid-area: pct; }
 }
