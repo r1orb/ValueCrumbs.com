@@ -298,3 +298,56 @@ table.holdings { min-width: 720px; }
   .feature { padding: 20px; }
   .header-row .btn-dark { width: 100%; }
 }
+
+/* ---- Confluence: superinvestors + insiders buying the same stock (the strongest crumb) */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.badge-conf { background: var(--accent); color: #fff; display: inline-flex; align-items: center; gap: 6px; }
+.conf-dots { display: inline-flex; gap: 3px; vertical-align: middle; }
+.conf-dots span { width: 7px; height: 7px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px currentColor; opacity: .55; }
+.conf-dots span.on { background: currentColor; opacity: 1; }
+tr.row-conf > td { background: var(--accent-tint); }
+tr.row-conf > td:first-child { box-shadow: inset 4px 0 0 var(--accent); }
+
+.conf-legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 22px 0 28px; }
+.conf-legend-item { border: 1px solid var(--line); border-radius: var(--radius, 12px); padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.conf-legend-item.conf-l3 { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.conf-legend-item .badge { align-self: flex-start; }
+
+.conf-list { display: flex; flex-direction: column; gap: 16px; margin-top: 14px; }
+.conf-card { border: 1px solid var(--line); border-radius: var(--radius, 12px); padding: 18px 20px; background: #fff; }
+.conf-card.conf-l3 { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+.conf-card.conf-l2 { box-shadow: inset 4px 0 0 var(--line-2); }
+.conf-card:target { outline: 3px solid var(--accent); outline-offset: 2px; }
+.conf-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+.conf-title { margin: 0 0 4px; font-size: 1.5rem; }
+.conf-title a { text-decoration: none; }
+.conf-company { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; color: var(--ink-2); letter-spacing: 0; }
+.conf-sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+.conf-sides > section { background: var(--soft-bg); border-radius: 10px; padding: 12px 14px; }
+.conf-side-title { margin: 0 0 8px; font-family: var(--mono); font-size: .75rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.conf-people { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.conf-people li { display: flex; flex-direction: column; gap: 1px; }
+.conf-people .sub { font-size: .85rem; color: var(--ink-2); }
+.conf-people .sub.mono { color: var(--muted); font-size: .78rem; }
+
+.conf-banner { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 6px 0 18px; padding: 12px 16px;
+  border-radius: var(--radius, 12px); background: var(--accent-tint); color: var(--ink); text-decoration: none; }
+.conf-banner.conf-l3 { box-shadow: inset 0 0 0 1.5px var(--accent); }
+.conf-banner:hover strong { text-decoration: underline; }
+
+.conf-strip { display: flex; align-items: center; justify-content: space-between; gap: 10px 18px; flex-wrap: wrap;
+  margin: 0 0 18px; padding: 12px 16px; border-radius: var(--radius, 12px); background: var(--ink); color: #fff; }
+.conf-strip-label { color: #C5D3E8; font-size: .9rem; }
+.conf-strip-label strong { color: #fff; }
+.conf-strip-items { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.conf-chip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,.1);
+  color: #fff; text-decoration: none; font-size: .9rem; }
+.conf-chip.conf-l3 { background: var(--accent); }
+.conf-chip:hover { background: rgba(255,255,255,.2); }
+.conf-chip.conf-l3:hover { background: var(--accent-dark); }
+.conf-all { color: #fff; font-size: .9rem; margin-left: 4px; }
+
+@media (max-width: 760px) {
+  .conf-legend, .conf-sides { grid-template-columns: minmax(0, 1fr); }
+  .conf-card { padding: 16px; }
+}
