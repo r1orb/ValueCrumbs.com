@@ -408,3 +408,12 @@ tr.hist-row > td { background: var(--soft-bg); padding: 0; }
   table.crumbs .hist-table tr { display: table-row; padding: 0; margin: 0; border: 0; border-radius: 0; }
   table.crumbs .hist-table th, table.crumbs .hist-table td { display: table-cell; padding: 5px 8px 5px 0; border-bottom: 1px solid var(--line); }
 }
+
+/* ---- Letters box on investor pages */
+.letters-box { display: flex; justify-content: space-between; align-items: center; gap: 14px 24px; flex-wrap: wrap;
+  margin: 4px 0 22px; padding: 16px 20px; border-radius: var(--radius, 12px); background: var(--ice); border: 1px solid var(--line); }
+.letters-text p { margin: 0; }
+.letters-kicker { font-size: .72rem; letter-spacing: .08em; color: var(--muted); }
+.letters-label { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; font-size: 1.15rem; margin: 2px 0 4px !important; }
+.letters-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.badge-letters { background: #fff; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
