@@ -368,3 +368,43 @@ tr.row-conf > td:first-child { box-shadow: inset 4px 0 0 var(--accent); }
 .tv-facade-text .small { color: var(--muted); }
 .tv-cta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 12px 0 28px; }
 @media (max-width: 760px) { .tv-box { height: 360px; } }
+
+/* ---- Position history (sparkline button + chart row) */
+.hist-btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: #fff; border-radius: 999px;
+  padding: 4px 10px 4px 8px; cursor: pointer; font: inherit; font-size: .8rem; color: var(--ink-2); }
+.hist-btn:hover, .hist-btn[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+.spark { width: 60px; height: 18px; }
+.spark polyline { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+tr.hist-row > td { background: var(--soft-bg); padding: 0; }
+.hist-box { padding: 16px 18px 18px; }
+.hist-title { margin: 0 0 2px; font-weight: 600; }
+.hist-legend { margin: 0 0 8px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.key { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-left: 6px; }
+.key-bar { background: #DDE7FB; box-shadow: inset 0 0 0 1px #B9CBF1; }
+.key-line { height: 3px; background: var(--ink); border-radius: 2px; width: 16px; }
+.hist-chart { width: 100%; max-width: 720px; height: auto; display: block; background: #fff; border-radius: 10px; border: 1px solid var(--line); }
+.hist-chart .grid { stroke: var(--line); stroke-width: 1; }
+.hist-chart .axis { font: 11px var(--mono); fill: var(--muted); }
+.hist-chart .axis-shares { fill: var(--ink-2); }
+.hist-chart .bar { fill: #DDE7FB; }
+.hist-chart .bar-last { fill: var(--accent); }
+.hist-chart .shares-line { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+.hist-chart .shares-dot { fill: #fff; stroke: var(--ink); stroke-width: 2; }
+.hist-table { margin-top: 12px; border-collapse: collapse; font-size: .82rem; min-width: 320px; }
+.hist-table th, .hist-table td { padding: 5px 14px 5px 0; border-bottom: 1px solid var(--line); text-align: left; }
+.hist-table th { font-family: var(--sans); font-weight: 600; color: var(--muted); font-size: .75rem; }
+.hist-table .num { text-align: right; }
+@media (max-width: 640px) {
+  table.cards-holdings tr { grid-template-areas: "rank co change" "weight weight weight" "val val shares" "hist hist hist"; }
+  table.cards-holders tr { grid-template-areas: "who change" "weight weight" "val shares" "since since" "hist hist"; }
+  .cards-holdings .c-hist, .cards-holders .c-hist { grid-area: hist; }
+  table.crumbs tr.hist-row { display: block; padding: 0; overflow: hidden; }
+  table.crumbs tr.hist-row > td { display: block; }
+  .hist-box { padding: 12px; }
+  /* the history table inside a card stays a normal table */
+  table.crumbs .hist-table { display: table; width: 100%; min-width: 0; }
+  table.crumbs .hist-table thead { position: static; width: auto; height: auto; overflow: visible; clip: auto; display: table-header-group; }
+  table.crumbs .hist-table tbody { display: table-row-group; }
+  table.crumbs .hist-table tr { display: table-row; padding: 0; margin: 0; border: 0; border-radius: 0; }
+  table.crumbs .hist-table th, table.crumbs .hist-table td { display: table-cell; padding: 5px 8px 5px 0; border-bottom: 1px solid var(--line); }
+}
