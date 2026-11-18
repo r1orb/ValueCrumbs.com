@@ -72,3 +72,37 @@ document.querySelectorAll('.player[data-embed]').forEach(function (box) {
     box.replaceChildren(f);
   });
 });
+
+// Stock-page price chart: TradingView loads only after the visitor clicks (no third-party requests before).
+document.querySelectorAll('.tv-box[data-tv-symbol]').forEach(function (box) {
+  var btn = box.querySelector('.tv-facade');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var symbol = box.getAttribute('data-tv-symbol');
+    var wrap = document.createElement('div');
+    wrap.className = 'tradingview-widget-container';
+    var inner = document.createElement('div');
+    inner.className = 'tradingview-widget-container__widget';
+    var credit = document.createElement('div');
+    credit.className = 'tradingview-widget-copyright';
+    var a = document.createElement('a');
+    a.href = box.getAttribute('data-tv-url');
+    a.rel = 'noopener nofollow';
+    a.target = '_blank';
+    a.textContent = symbol + ' chart by TradingView';
+    credit.appendChild(a);
+    var s = document.createElement('script');
+    s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+    s.async = true;
+    s.textContent = JSON.stringify({
+      autosize: true, symbol: symbol, interval: 'W', timezone: 'exchange', theme: 'light', style: '3',
+      backgroundColor: 'rgba(255, 255, 255, 1)', hide_side_toolbar: true, allow_symbol_change: false,
+      save_image: false, calendar: false, locale: 'en', support_host: 'https://www.tradingview.com'
+    });
+    wrap.appendChild(inner);
+    wrap.appendChild(credit);
+    wrap.appendChild(s);
+    box.classList.add('is-loaded');
+    box.replaceChildren(wrap);
+  });
+});
