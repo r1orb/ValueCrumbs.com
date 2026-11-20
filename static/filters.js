@@ -224,3 +224,17 @@ document.querySelectorAll('[data-tabs]').forEach(function (box) {
     });
   });
 });
+
+// Floating header: a shadow once the page scrolls, the real header height for #anchor links,
+// and on phones the current page's menu item scrolled into view.
+(function () {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  function measure() { document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px'); }
+  function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+  measure(); onScroll();
+  window.addEventListener('resize', measure);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  var nav = header.querySelector('.nav'), current = nav && nav.querySelector('[aria-current="page"]');
+  if (current && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = current.offsetLeft - nav.clientWidth / 2 + current.offsetWidth / 2;
+})();
