@@ -417,3 +417,23 @@ tr.hist-row > td { background: var(--soft-bg); padding: 0; }
 .letters-label { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; font-size: 1.15rem; margin: 2px 0 4px !important; }
 .letters-links { display: flex; gap: 10px; flex-wrap: wrap; }
 .badge-letters { background: #fff; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+
+/* ---- Statistics page: ValueCrumbs Index */
+.index-chart { margin: 8px 0 26px; }
+.index-chart svg { width: 100%; max-width: 860px; height: auto; display: block; border: 1px solid var(--line); border-radius: var(--radius, 12px); background: #fff; }
+.index-chart .grid { stroke: var(--line); stroke-width: 1; }
+.index-chart .base { stroke: var(--line-2); stroke-dasharray: 4 4; }
+.index-chart .axis { font: 11px var(--mono); fill: var(--muted); }
+.index-chart .index { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linejoin: round; }
+.index-chart .broad { fill: none; stroke: var(--line-2); stroke-width: 2; stroke-linejoin: round; }
+.index-chart .index-dot { fill: var(--accent); stroke: #fff; stroke-width: 2; }
+.index-chart figcaption { margin-top: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.key-index { display: inline-block; width: 16px; height: 3px; background: var(--accent); border-radius: 2px; margin-left: 4px; }
+.key-broad { display: inline-block; width: 16px; height: 3px; background: var(--line-2); border-radius: 2px; margin-left: 10px; }
+.index-quarters { margin: 18px 0 30px; }
+.index-quarters summary { cursor: pointer; font-weight: 600; color: var(--accent); margin-bottom: 10px; }
+.tabs .pills { margin-bottom: 12px; }
+.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.col-title { margin: 22px 0 8px; font-size: 1.05rem; }
+@media (max-width: 900px) { .two-col { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) { .cards-ranking .c-weight { grid-column: 1 / -1; } }

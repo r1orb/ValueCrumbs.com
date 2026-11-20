@@ -213,3 +213,14 @@ document.addEventListener('input', function (e) {
   document.querySelectorAll('tr.hist-row').forEach(function (r) { r.remove(); });
   document.querySelectorAll('.hist-btn[aria-expanded="true"]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
 }, true);
+
+// Tabs ([data-tabs]): the buttons with data-tab show the [data-panel] with the same name.
+document.querySelectorAll('[data-tabs]').forEach(function (box) {
+  var tabs = box.querySelectorAll('[data-tab]');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (o) { var on = o === t; o.setAttribute('aria-selected', on); o.setAttribute('aria-pressed', on); });
+      box.querySelectorAll('[data-panel]').forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== t.getAttribute('data-tab'); });
+    });
+  });
+});
