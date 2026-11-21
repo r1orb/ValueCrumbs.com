@@ -14,7 +14,7 @@ document.querySelectorAll('[data-filter-scope]').forEach(function (toolbar) {
     var q = search ? search.value.trim().toLowerCase() : '';
     var shown = 0;
     items.forEach(function (el) {
-      var okGroup = group === 'all' || el.getAttribute('data-group') === group;
+      var okGroup = group === 'all' || (' ' + el.getAttribute('data-group') + ' ').indexOf(' ' + group + ' ') !== -1;   // an item can be in several groups
       var okText = !q || (el.getAttribute('data-search') || '').indexOf(q) !== -1;
       var visible = okGroup && okText;
       el.hidden = !visible;
